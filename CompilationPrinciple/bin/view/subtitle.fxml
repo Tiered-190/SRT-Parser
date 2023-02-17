@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1200.0" style="-fx-background-color: #ead1dc; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainActivity1">
+   <children>
+      <Button layoutX="845.0" layoutY="108.0" mnemonicParsing="false" onAction="#scanInFilePath" prefHeight="50.0" prefWidth="107.0" text="确认">
+         <font>
+            <Font name="Arial" size="29.0" />
+         </font>
+      </Button>
+      <TextField fx:id="captionPath" layoutX="375.0" layoutY="106.0" prefHeight="57.0" prefWidth="454.0" promptText="请输入srt文件的路径" />
+      <TextArea fx:id="printingBoard" editable="false" layoutX="287.0" layoutY="175.0" prefHeight="450.0" prefWidth="884.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="375.0" layoutY="6.0" prefHeight="68.0" prefWidth="512.0" style="-fx-background-color: #dfbfcd; -fx-border-color: black;" text="字幕分析器" textFill="#260404" wrapText="true">
+         <font>
+            <Font name="Corbel" size="44.0" />
+         </font>
+      </Label>
+      <VBox layoutX="26.0" layoutY="188.0" prefHeight="424.0" prefWidth="243.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#tanChuang1" prefHeight="70.0" prefWidth="243.0" text="移动整体字幕" textFill="#0d0000">
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Button>
+            <Button fx:id="findACaptionBtn" mnemonicParsing="false" onAction="#findACaption" prefHeight="70.0" prefWidth="243.0" text="查找某条字幕" textFill="#0d0000">
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#saveFile" prefHeight="70.0" prefWidth="243.0" text="保存" textFill="#0d0000">
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#scanInFilePath" prefHeight="70.0" prefWidth="243.0" text="打印" textFill="#0d0000">
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#exitAndClose" prefHeight="70.0" prefWidth="243.0" text="退出" textFill="#0d0000">
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Button>
+            <Label fx:id="tips">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <ImageView fitHeight="161.0" fitWidth="194.0" layoutX="60.0" layoutY="14.0" opacity="0.6" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.5;">
+         <image>
+            <Image url="@../img/cat.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

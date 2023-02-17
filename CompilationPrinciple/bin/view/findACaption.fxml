@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1000.0" style="-fx-border-color: white; -fx-background-color: #ead1dc; -fx-border-width: 9px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainActivity1">
+   <children>
+      <Label alignment="CENTER" layoutX="45.0" layoutY="47.0" prefHeight="60.0" prefWidth="400.0" style="-fx-border-color: black; -fx-background-color: white; -fx-border-width: 2px;" text="查找某条字幕">
+         <font>
+            <Font name="Arial" size="45.0" />
+         </font>
+         <textFill>
+            <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0" startX="0.5172413793103448">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#c6a0a0" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="104.0" layoutY="145.0" prefHeight="42.0" prefWidth="271.0" style="-fx-border-color: black; -fx-background-color: #d9d2e9;" text="按照字幕SID进行查找：">
+         <font>
+            <Font name="Arial" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="266.0" prefHeight="42.0" prefWidth="271.0" style="-fx-border-color: black; -fx-background-color: #d9d2e9;" text="按照时间进行查找：">
+         <font>
+            <Font name="Arial" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="131.0" layoutY="324.0" prefHeight="33.0" prefWidth="66.0" style="-fx-border-color: black; -fx-background-color: #f6e6ed;" text="小时:">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="131.0" layoutY="374.0" prefHeight="33.0" prefWidth="66.0" style="-fx-border-color: black; -fx-background-color: #f6e6ed;" text="分钟:">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="426.0" prefHeight="33.0" prefWidth="66.0" style="-fx-border-color: black; -fx-background-color: #f6e6ed;" text="秒:">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="131.0" layoutY="476.0" prefHeight="33.0" prefWidth="66.0" style="-fx-border-color: black; -fx-background-color: #f6e6ed;" text="毫秒:">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="findACaptionInputH" alignment="CENTER" layoutX="210.0" layoutY="324.0" prefHeight="31.0" prefWidth="120.0" promptText="形式为00">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="findACaptionInputM" alignment="CENTER" layoutX="210.0" layoutY="375.0" prefHeight="31.0" prefWidth="120.0" promptText="形式为00">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="findACaptionInputS" alignment="CENTER" layoutX="210.0" layoutY="426.0" prefHeight="31.0" prefWidth="120.0" promptText="形式为00">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="findACaptionInputMS" alignment="CENTER" layoutX="210.0" layoutY="476.0" prefHeight="31.0" prefWidth="120.0" promptText="形式为000">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="sidInput" layoutX="104.0" layoutY="197.0" prefHeight="42.0" prefWidth="236.0" promptText="请输入SID">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <Button layoutX="363.0" layoutY="197.0" mnemonicParsing="false" onAction="#findBySid" prefHeight="40.0" text="确认">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="220.0" layoutY="536.0" maxWidth="100.0" mnemonicParsing="false" onAction="#findByTime" prefHeight="40.0" prefWidth="100.0" text="确认">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="printBoard2" layoutX="468.0" layoutY="47.0" prefHeight="440.0" prefWidth="500.0" />
+      <Button layoutX="843.0" layoutY="566.0" mnemonicParsing="false" onAction="#moveACaption" prefHeight="40.0" text="后退">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="728.0" layoutY="566.0" mnemonicParsing="false" onAction="#moveACaption" prefHeight="40.0" text="前进">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Button>
+      <TextField fx:id="moveACaptionTime" layoutX="704.0" layoutY="507.0" prefHeight="42.0" prefWidth="236.0" promptText="请输入移动的时间/毫秒">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="500.0" layoutY="507.0" prefHeight="42.0" prefWidth="188.0" style="-fx-border-color: black; -fx-background-color: #d9d2e9;" text="移动单条字幕：">
+         <font>
+            <Font name="Arial" size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="goBack" layoutX="14.0" layoutY="566.0" mnemonicParsing="false" onAction="#goHome" text="返回">
+         <font>
+            <Font name="Arial" size="28.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
